@@ -28,7 +28,7 @@ BYTES:
 ####################################
 ```
 <br>
-NOTE: Pixel Color and Number of Pixels can be place as much as you can. example:
+NOTE: Pixel Color and Number of Pixels can be place as much as you want. example:
 
 ```
 2E 54 49 46 20 0A 60 0F 5B 0F
