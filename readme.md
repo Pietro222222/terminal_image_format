@@ -16,16 +16,16 @@ BYTES:
 # How it works
 
 ```
-##################################
-name             OFFSET  BYTES   #
-HEADER           | 0     | 5 |   #
----------------------------------#
-Pixels Per Line  | 6     | 1 |   #
----------------------------------#
-Pixel Color      | 7     | 1 |   # 
----------------------------------#
-Number of pixels | 8     | 1 |   #
-##################################
+####################################
+# name             OFFSET  BYTES   #
+# HEADER           | 0     | 5 |   #
+# ---------------------------------#
+# Pixels Per Line  | 6     | 1 |   #
+# ---------------------------------#
+# Pixel Color      | 7     | 1 |   # 
+# ---------------------------------#
+# Number of pixels | 8     | 1 |   #
+####################################
 ```
 <br>
 NOTE: Pixel Color and Number of Pixels can be place as much as you can. example:
