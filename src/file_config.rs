@@ -1,4 +1,4 @@
-use std::io::Read;
+
 
 use super::color_codes;
 pub struct TifConfig {
@@ -8,7 +8,7 @@ pub struct TifConfig {
 
 impl TifConfig {
     pub fn new(file_content: Vec<u8>) -> TifConfig {
-        let mut header = &file_content[0..5];
+        let header = &file_content[0..5];
         let mut config = TifConfig {
             pixels: vec![],
             pixels_per_line: 0,

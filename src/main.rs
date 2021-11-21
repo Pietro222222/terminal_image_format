@@ -11,11 +11,11 @@ fn main() {
     let args = env::args().collect::<Vec<String>>();
     let mut file = fs::File::open(&args[1]).unwrap();
     let mut buffer: Vec<u8> = vec![];
-    file.read_to_end(&mut buffer);
-    let mut config = file_config::TifConfig::new(buffer);
+    file.read_to_end(&mut buffer).unwrap();
+    let config = file_config::TifConfig::new(buffer);
     let mut line_counter: u8 = 0;
     for i in config.pixels {
-        let mut pixel_as_str = match i.color {
+        let pixel_as_str = match i.color {
             Colors::BLACK => "█".black(),
             Colors::BLUE => "█".bright_blue(),
             Colors::CYAN => "█".cyan(),
@@ -27,7 +27,7 @@ fn main() {
             Colors::YELLOW => "█".yellow(),
         };
 
-        for j in 0..i.number_of_pixels {
+        for _j in 0..i.number_of_pixels {
             line_counter += 1;
             print!("{}", &pixel_as_str);
             if line_counter == config.pixels_per_line {
