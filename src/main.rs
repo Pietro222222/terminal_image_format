@@ -32,7 +32,7 @@ fn main() {
             print!("{}", &pixel_as_str);
             if line_counter == config.pixels_per_line {
                 line_counter = 0;
-                println!("")
+                return
             }
         }
     }
