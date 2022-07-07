@@ -1,5 +1,5 @@
-use std::{env, process::exit, io::stdout};
 use libtif::{image::TifImage, pixel::PixelColor};
+use std::{env, process::exit};
 use termion::color;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -14,32 +14,37 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             use PixelColor::*;
 
             let color = match pixel {
-                Black   => {
+                Black => {
                     format!("{}", color::Bg(color::Black))
-                },
-                Red     => {
+                }
+                Red => {
                     format!("{}", color::Bg(color::Red))
-                },
-                Green   => {
+                }
+                Green => {
                     format!("{}", color::Bg(color::Green))
-                },
-                Yellow  => {
+                }
+                Yellow => {
                     format!("{}", color::Bg(color::Yellow))
-                },
-                Blue    => {
+                }
+                Blue => {
                     format!("{}", color::Bg(color::Blue))
-                },
+                }
                 Magenta => {
                     format!("{}", color::Bg(color::Magenta))
-                },
-                Cyan    => {
+                }
+                Cyan => {
                     format!("{}", color::Bg(color::Cyan))
-                },
-                White   => {
+                }
+                White => {
                     format!("{}", color::Bg(color::White))
-                },
+                }
             };
-            print!("{}{} {}", termion::cursor::Goto(width as u16 + 1, height as u16 + 1), color, color::Bg(color::Reset));
+            print!(
+                "{}{} {}",
+                termion::cursor::Goto(width as u16 + 1, height as u16 + 1),
+                color,
+                color::Bg(color::Reset)
+            );
         }
     }
 
